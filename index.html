@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Huckle Buckle Beanstalk</title><!-- 
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+     --<!-- ><link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Cherry+Swash:700)' />
+
+	</head>
+<body>
+    <h1>Huckle Buckle Beanstalk</h1>
+    <form id="guess-form" name="myForm">
+    	<fieldset>
+        <label for="guess">I have a number between 1 and 100. Try to guess it.</label>
+        <input type="text" name="guess" id="guess">
+        </fieldset>
+        <div class="error off">Make sure your guess is a number between 1 and 100.</div>
+        <button type="submit" id="guessBtn">Guess</button>
+        <button id="reset" class="off">Play again</button>
+    </form>
+    <div class="response off">
+        <h2 id="guess-vs-number"></h2>
+        <h3 id="guess-vs-guess"></h3>
+        <p id="num-guesses"></p>
+    </div>
+
+    <!-- script src="js/jquery-1.9.1.min.js"></script -->
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

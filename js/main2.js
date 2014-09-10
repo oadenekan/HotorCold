@@ -24,6 +24,7 @@ var game = {
 		else if (guessNum > 100 || guessNum < 0) 
 			{
 				alert("Enter a number between 0 and 100");
+				$("#guess").val("");
 			} 
 		else 
 			{	
@@ -43,13 +44,13 @@ var game = {
 			else if(Math.abs(computerChoice - previousGuess) > Math.abs(computerChoice - guessNum))
 			{
 				alert('You are hot!');
-				$("#guess").val() = "";
+				$("#guess").val("");
 			}
 
 			else
 			{
 				alert("You are cold");
-				$("#guess").val() = "";
+				$("#guess").val("");
 			} 
 			 previousGuess = guessNum;
 	},

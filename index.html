@@ -6,7 +6,7 @@
     <title>Huckle Buckle Beanstalk</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
      <link rel="stylesheet" type="text/css" href="css/main.css" />
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|Cherry+Swash:700)' />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
 	</head>
 <body>
@@ -15,14 +15,13 @@
     <form id="guess-form" name="myForm">
     	<fieldset id="field">
         <label for="guess">I have a number between 1 and 100. Try to guess it.</label>
-        <input type="text" name="guess" id="guess">
+        <input type="text" name="guess" id="guess" maxlength="3">
         </fieldset>
+         <div class="outerDiv"></div>
         <button type="button" id="guessBtn" class="off">Guess</button>
         <button type="button" id="reset" class="off">Play again</button>
     </form>
-    <div class="outerDiv">
-        <div class="innerDiv"></div>
-    </div>
+   
     <script src="js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/main2.js"></script>
 </body>

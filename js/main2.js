@@ -5,7 +5,11 @@ var guessNum;
 var game = {
 	init: function() {
 		$("#reset").click(game.reload);
-		$("#guessBtn").click(game.check);
+		$(".outerDiv").hide();
+		$("#guessBtn").click(function(event) {
+			event.preventDefault();
+			game.check();
+		});
 	},
 
 	
@@ -15,41 +19,45 @@ var game = {
 
 	
 	check: function(guessNum){
-		guessNum = parseInt($("#guess").val());
+		guessNum = ($("#guess").val());
 		console.log(guessNum);
 		if (isNaN(guessNum) || (guessNum === ""))
 			{
-				alert("Not a match! Use a number");
+				$('.outerDiv').html("Not a match! Use a number")
+				$("#guess").val("");
 			} 
 		else if (guessNum > 100 || guessNum < 0) 
 			{
-				alert("Enter a number between 0 and 100");
+				$('.outerDiv').html("Enter a number between 0 and 100")
+				$("#guess").val("");
 			} 
 		else 
 			{	
 				(game.checkRange());
 			}
+
+			$('.outerDiv').show();
 	},
 
 	
-	checkRange: function(num){
-			guessNum = parseInt($("#guess").val());
-			alert('guessNum: ' + guessNum  +' previousGuess: ' + previousGuess);
+	checkRange: function(num)
+	{
+			guessNum = ($("#guess").val());
 			if (guessNum == computerChoice)
 			{				
-				alert('You are right');
+				$('.outerDiv').html("You are right")
 				return true;
 			}
 			else if(Math.abs(computerChoice - previousGuess) > Math.abs(computerChoice - guessNum))
 			{
-				alert('You are hot!');
-				$("#guess").val() = "";
+				$('.outerDiv').html("You are hot")
+				$("#guess").val("");
 			}
 
 			else
 			{
-				alert("You are cold");
-				$("#guess").val() = "";
+				$('.outerDiv').html("You are cold")
+				$("#guess").val("");
 			} 
 			 previousGuess = guessNum;
 	},
